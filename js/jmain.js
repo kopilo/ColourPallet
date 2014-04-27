@@ -27,7 +27,7 @@ jQuery(function ($) {
 			}
 		});
 		
-		$("#calc").on(mobile ? 'touchstart' : 'click', function(e) {
+		$('input').keyup(function(e) {
 			/* get RGB */
 			var red = $('input#red').val();
 			var green = $('input#green').val();
@@ -41,10 +41,10 @@ jQuery(function ($) {
 			
 			if(blue > 255) blue = 255;
 			else if(blue == "") blue = 0;
-			/* set input to match*/
+			/* set input to match
 			$('input#red').val(red);
 			$('input#blue').val(blue);
-			$('input#green').val(green);
+			$('input#green').val(green);*/
 			/* display data */
 			
 			$("header div#info").children().remove();
