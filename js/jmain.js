@@ -1,13 +1,7 @@
 mobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 
-
-
 jQuery(function ($) {
 	function contrast(hue, hsl) {
-		/*if(hue == 0) hue = 0.01;
-		hue += .25;
-		if(hue > 1) hue -= 1;*/
-			
 		var newrgb = hslToRgb(hue, hsl[1], hsl[2]);
 		newrgb[0] = Math.floor((255 - newrgb[0]));
 		newrgb[1] = Math.floor((255 - newrgb[1]));
@@ -16,6 +10,7 @@ jQuery(function ($) {
 	}
 	
 	$(document).ready(function(){
+		//allow numeric only input
 		$('input').keydown(function (e) {
 			// Allow: backspace, delete, tab, escape, enter and .
 			if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -58,29 +53,23 @@ jQuery(function ($) {
 			$("header div#info").append("<div><p>Hue: "+hsl[0]+"</p><p>Saturation: "+hsl[1]+"</p><p>Light: "+hsl[2]+"</p></div>");
 			$("article div#pallet, article div#contrast").children().remove();
 			
-			
-			
 			$("div#current").css("background-color","rgb("+red+","+green+","+blue+")");
+			$("div#current").attr("title", "rgb("+red+","+green+","+blue+")");
 			
 			/* generate pallet*/
 			$("article").css("display","block");
-			
 			
 			var hue = hsl[0];
 			if(hue == 0) hue = 0.01;
 			
 			contrast(hue, hsl);
 			
-			var dirup = false;
-			if(hue < 0.1) dirup = true;
 			/* non contrasting pallet generation here */
 			for(var i = 0; i < 4; i++) {
-				if(dirup)
+				if(hue < 0.1)
 					hue *= 1.6180339887;
 				else
 					hue *= 0.6180339887;
-				
-				//to do: loop hue round when > 1 or < 0
 				
 				var newrgb = hslToRgb(hue, hsl[1], hsl[2]);
 				newrgb[0] = Math.floor(newrgb[0]);
