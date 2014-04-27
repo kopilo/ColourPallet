@@ -49,6 +49,7 @@ jQuery(function ($) {
 			
 			$("header div#info").children().remove();
 			$("header div#info").append("<div><p>Red: "+red+"</p><p>Green: "+green+"</p><p>Blue: "+blue+"</p></div>");
+			
 			var hsl = rgbToHsl(red,green,blue);
 			$("header div#info").append("<div><p>Hue: "+hsl[0]+"</p><p>Saturation: "+hsl[1]+"</p><p>Light: "+hsl[2]+"</p></div>");
 			$("article div#pallet, article div#contrast").children().remove();
