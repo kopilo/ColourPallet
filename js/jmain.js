@@ -64,10 +64,10 @@ jQuery(function ($) {
 			if(hue == 0) hue = 0.01;
 			
 			contrast(hue, hsl);
-			
+			var dirup = (hue < 0.1);
 			/* non contrasting pallet generation here */
-			for(var i = 0; i < 4; i++) {
-				if(hue < 0.1)
+			for(var i = 0; i < 10; i++) {
+				if(dirup)
 					hue *= 1.6180339887;
 				else
 					hue *= 0.6180339887;
