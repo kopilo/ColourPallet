@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+p {
+	padding:0px;
+	margin:0px;
+}
+
+header{
+	overflow:hidden;
+	padding-bottom:1.5em;
+	border-bottom:5px solid #333;
+}
+
+input {
+	clear:both;
+}
+
+form {
+	float:left;
+}
+
+div#current{
+	width:4em;
+	height:4em;
+	float:left;
+}
+header div#info {
+	clear:left;
+	margin-top:1.5em;
+}
+
+header div {
+	float:left;
+}
+header div:nth-child(1n+2) {
+	margin-left:1em;
+}
+
+article h2 {
+	clear:left;
+	padding-top:1em;
+	padding-bottom:0.5em;
+	margin:0px;
+}
+
+article div#current, article div.colour {
+	border:1px solid black;
+	margin-left:0.5em;
+}
+
+article div.pallet {
+	float:left;
+}
+
+div#contrast { clear:left; }
+
+div.colour {
+	width:4em;
+	height:4em;
+	float:left;
+}
