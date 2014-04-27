@@ -66,7 +66,7 @@ jQuery(function ($) {
 			contrast(hue, hsl);
 			var dirup = (hue < 0.1);
 			/* non contrasting pallet generation here */
-			for(var i = 0; i < 10; i++) {
+			for(var i = 0; i < 4; i++) {
 				if(dirup)
 					hue *= 1.6180339887;
 				else
