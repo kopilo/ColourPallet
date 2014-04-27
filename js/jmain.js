@@ -33,25 +33,25 @@ jQuery(function ($) {
 			var green = $('input#green').val();
 			var blue = $('input#blue').val();
 			/* ensure correct values */
-			if(red > 255) red = 255;
+			if(red > 255) {red = 255; $('input#red').val(red);}
 			else if(red == "") red = 0;
 			
-			if(green > 255) green = 255;
+			if(green > 255) {green = 255; $('input#green').val(green);}
 			else if(green == "") green = 0;
 			
-			if(blue > 255) blue = 255;
+			if(blue > 255) { blue = 255; $('input#blue').val(blue);}
 			else if(blue == "") blue = 0;
-			/* set input to match
-			$('input#red').val(red);
-			$('input#blue').val(blue);
-			$('input#green').val(green);*/
+			/* set input to match */
+			
+			
+			
 			/* display data */
 			
 			$("header div#info").children().remove();
-			$("header div#info").append("<div><p>Red: "+red+"</p><p>Green: "+green+"</p><p>Blue: "+blue+"</p></div>");
+			$("header div#info").append("<div><p>Red:&nbsp;&nbsp;&nbsp;"+red+"</p><p>Green:&nbsp;"+green+"</p><p>Blue:&nbsp;&nbsp;"+blue+"</p></div>");
 			
 			var hsl = rgbToHsl(red,green,blue);
-			$("header div#info").append("<div><p>Hue: "+hsl[0]+"</p><p>Saturation: "+hsl[1]+"</p><p>Light: "+hsl[2]+"</p></div>");
+			$("header div#info").append("<div><p>Hue:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+hsl[0]+"</p><p>Saturation:&nbsp;"+hsl[1]+"</p><p>Light:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+hsl[2]+"</p></div>");
 			$("article div#pallet, article div#contrast").children().remove();
 			
 			$("div#current").css("background-color","rgb("+red+","+green+","+blue+")");
